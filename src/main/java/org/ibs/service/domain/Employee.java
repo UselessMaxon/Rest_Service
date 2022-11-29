@@ -1,9 +1,7 @@
 package org.ibs.service.domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,6 +9,8 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "employee")
 public class Employee {
