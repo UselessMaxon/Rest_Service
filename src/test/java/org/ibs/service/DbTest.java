@@ -4,13 +4,15 @@ package org.ibs.service;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.ibs.service.domain.Course;
-import org.ibs.service.domain.Department;
-import org.ibs.service.domain.Employee;
+import org.ibs.service.domain.EmployeeRepository;
+import org.ibs.service.domain.entity.Course;
+import org.ibs.service.domain.entity.Department;
+import org.ibs.service.domain.entity.Employee;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -29,6 +31,10 @@ class DbTest {
 
     @PersistenceContext
     EntityManager em;
+
+    @Autowired
+    EmployeeRepository employeeRepository;
+
 
 
     @BeforeEach
@@ -53,8 +59,16 @@ class DbTest {
                 .get(0);
 
         Assert.assertEquals("Rest service", emp.getCourses().get(0).getName());
-
     }
+
+    @Test
+    void test2() {
+        Employee emp = employeeRepository.findByFirstName("a").get();
+        Assert.assertEquals("Rest service", emp.getCourses().get(0).getName());
+    }
+
+
+
 }
 
 

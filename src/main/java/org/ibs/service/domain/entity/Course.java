@@ -1,4 +1,4 @@
-package org.ibs.service.domain;
+package org.ibs.service.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
