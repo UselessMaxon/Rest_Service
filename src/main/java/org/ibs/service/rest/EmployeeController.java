@@ -1,6 +1,7 @@
 package org.ibs.service.rest;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.ibs.service.domain.EmployeeRepository;
 import org.ibs.service.domain.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/employees")
+@Slf4j
 
 public class EmployeeController {
 
@@ -22,7 +24,12 @@ public class EmployeeController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     Employee newEmployee(@RequestBody Employee employee) {
+        log.info("---------------------------------------------");
+        if (employee.getId() != null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Found Id. Use PUT instead of POST.");
+        }
         return repository.save(employee);
     }
 

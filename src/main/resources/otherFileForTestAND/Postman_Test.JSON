@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "b960b83c-ff97-4507-90ad-50cc7da4b50b",
+		"name": "Test_Rest_Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllEmp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"firstName\": \"Max\",\r\n        \"lastName\": \"YA\",\r\n        \"birthday\": \"2020-11-11\",\r\n        \"department\": {\r\n            \"id\": 24,\r\n            \"name\": \"IT\"\r\n        },\r\n        \"monthSalary\": 500000,\r\n        \"courses\": [\r\n            {\r\n                \"name\": \"SOAP 2\"\r\n            }\r\n        ]\r\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

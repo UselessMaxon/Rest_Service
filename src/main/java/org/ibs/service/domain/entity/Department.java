@@ -1,5 +1,7 @@
 package org.ibs.service.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,6 +10,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties("hibernateLazyInitializer")
 @Entity
 @Table(name = "department")
 public class Department {
