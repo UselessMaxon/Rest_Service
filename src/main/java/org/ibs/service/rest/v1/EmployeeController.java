@@ -1,6 +1,7 @@
-package org.ibs.service.rest;
+package org.ibs.service.rest.v1;
 
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.ibs.service.domain.EmployeeRepository;
 import org.ibs.service.domain.entity.Employee;
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 
-@RestController
-@RequestMapping("/employees")
+@RestController("employee controller v1")
+@RequestMapping("/v1/employees")
 @Slf4j
 
 public class EmployeeController {
@@ -20,12 +21,16 @@ public class EmployeeController {
     private EmployeeRepository repository;
 
     @GetMapping
-    Iterable<Employee> getAll() {
-        return repository.findAll();
+    Iterable<Employee> getAll(@RequestParam(required = false) String firstName) {
+            if (firstName == null) {
+                return repository.findAll();
+            }
+            return repository.findAllByFirstName(firstName);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(operationId = "addEmp", summary = "Adds new employee.")
     Employee newEmployee(@RequestBody Employee employee) {
         log.info("---------------------------------------------");
         if (employee.getId() != null) {

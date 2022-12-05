@@ -11,11 +11,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080",
+					"raw": "localhost:8080/api",
 					"host": [
 						"localhost"
 					],
-					"port": "8080"
+					"port": "8080",
+					"path": [
+						"api"
+					]
 				}
 			},
 			"response": []
@@ -26,12 +29,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/employees",
+					"raw": "localhost:8080/api/employees",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
 						"employees"
 					]
 				}
@@ -54,12 +58,13 @@
 					"raw": "    {\r\n        \"firstName\": \"Max\",\r\n        \"lastName\": \"YA\",\r\n        \"birthday\": \"2020-11-11\",\r\n        \"department\": {\r\n            \"id\": 24,\r\n            \"name\": \"IT\"\r\n        },\r\n        \"monthSalary\": 500000,\r\n        \"courses\": [\r\n            {\r\n                \"name\": \"SOAP 2\"\r\n            }\r\n        ]\r\n    }"
 				},
 				"url": {
-					"raw": "localhost:8080/employees",
+					"raw": "localhost:8080/api/employees",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
 						"employees"
 					]
 				}
@@ -71,7 +76,18 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": null
+				"url": {
+					"raw": "localhost:8080/api/employees/20",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"20"
+					]
+				}
 			},
 			"response": []
 		}
