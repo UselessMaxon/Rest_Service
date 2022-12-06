@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.util.List;
 
-/*
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
@@ -40,7 +40,7 @@ class DbTest {
 
     @BeforeEach
     void setup() {
-        Department department = new Department(null, "IT");
+        Department department = new Department( null, "it", null);
         Course course = new Course(null, "Rest service");
         Employee emp = new Employee(null, "a", "b",
                 LocalDate.now(), department, 500000, List.of(course));
@@ -69,12 +69,12 @@ class DbTest {
     }
 
 
-
+*/
 }
 
 
 
-*/
+
 
 
 

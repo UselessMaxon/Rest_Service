@@ -22,7 +22,7 @@ public class Department {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "department", cascade =  CascadeType.ALL)
