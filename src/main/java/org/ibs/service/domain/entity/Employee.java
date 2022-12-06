@@ -30,14 +30,14 @@ public class Employee {
     private LocalDate birthday;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
     @Column(name = "month_salary")
     private Integer monthSalary;
 
-    @ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST })
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = "employee_course",
         joinColumns = @JoinColumn(name = "employee_id"),
         inverseJoinColumns = @JoinColumn(name = "course_id"))

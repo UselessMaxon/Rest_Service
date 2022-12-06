@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.util.List;
 
-
+/*
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
@@ -67,14 +67,14 @@ class DbTest {
         Employee emp = employeeRepository.findAllByFirstName("a").get();
         Assert.assertEquals("Rest service", emp.getCourses().get(0).getName());
     }
-*/
+
 
 
 }
 
 
 
-
+*/
 
 
 
