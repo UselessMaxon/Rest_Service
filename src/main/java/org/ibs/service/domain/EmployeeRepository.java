@@ -8,5 +8,9 @@ import java.util.List;
 
 @Repository
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
+
+//    List<Employee> findByBoss(Long boss);
     List<Employee> findAllByFirstName(String firstName);
+
+
 }

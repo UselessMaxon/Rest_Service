@@ -43,7 +43,7 @@ class DbTest {
         Department department = new Department( null, "it", null);
         Course course = new Course(null, "Rest service");
         Employee emp = new Employee(null, "a", "b",
-                LocalDate.now(), department, 500000, List.of(course));
+                LocalDate.now(), department, 500000, List.of(course), null);
 
         em.persist(department);
         em.persist(course);

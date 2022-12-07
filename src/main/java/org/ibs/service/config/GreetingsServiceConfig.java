@@ -29,6 +29,6 @@ public class GreetingsServiceConfig {
 
     @Bean
     Employee makeDefEmppl() {
-        return new Employee(null, "Maks", null, null, null, null, null);
+        return new Employee(null, "Maks", null, null, null, null, null, null);
     }
 }

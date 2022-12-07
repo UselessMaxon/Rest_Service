@@ -22,10 +22,10 @@ public class EmployeeController {
 
     @GetMapping
     Iterable<Employee> getAll(@RequestParam(required = false) String firstName) {
-            if (firstName == null) {
-                return repository.findAll();
-            }
-            return repository.findAllByFirstName(firstName);
+        if (firstName == null) {
+            return repository.findAll();
+        }
+        return repository.findAllByFirstName(firstName);
     }
 
     @PostMapping
@@ -47,8 +47,9 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    void deleteEmployee(@PathVariable Long id) {
+    void deleteEmployee(@PathVariable long id) {
         repository.deleteById(id);
     }
+
 
 }

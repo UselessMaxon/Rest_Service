@@ -12,4 +12,5 @@ public class Employee {
     private String lastName;
     private LocalDate birthday;
     private Integer monthSalary;
+    private Long boss;
 }
