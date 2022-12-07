@@ -7,6 +7,7 @@ import org.ibs.service.domain.EmployeeRepository;
 import org.ibs.service.domain.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -47,6 +48,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('WRITER')")
     void deleteEmployee(@PathVariable Long id) {
         repository.deleteById(id);
     }
